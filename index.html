@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="contener">
+
+            <h1> LUDO </h1>
+        
+     <div class="dice">
+         <P>player 1 </P>
+         <img src="./images/1.png" id="cheak">
+     </div>
+
+     <div class="dice">
+        <P>player 2</P>
+        <img src="./images/6.png" id="cheak1">
+    </div>
+    <div class="btn">
+        <button onclick="ludogame()">Click Me</button>
+    </div>
+    
+</div>
+<script>
+    ludogame =() => {
+ const play1 =Math.floor(Math.random()*6)+1;
+//  const play1dice ="./images/"+play1+".png";
+const play1dice =`./images/${play1}.png`;
+document.getElementById('cheak').setAttribute('src',play1dice);
+
+
+const play2 =Math.floor(Math.random()*6)+1;
+//  const play2dice ="./images/"+play2+".png";
+const play2dice =`./images/${play2}.png`;
+document.getElementById('cheak1').setAttribute('src',play2dice);
+
+if(play1 > play2){
+    document.querySelector('h1').innerHTML="Player 1 Won";
+}else if(play1 < play2){
+    document.querySelector('h1').innerHTML="Player 2 Won";
+
+}else{
+    document.querySelector('h1').innerHTML=" Draw Match";
+}
+}
+
+
+</script>
+</body>
+</html>
